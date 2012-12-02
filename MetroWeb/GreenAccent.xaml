@@ -1,0 +1,33 @@
+﻿<ResourceDictionary x:Uid="ResourceDictionary_1" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!--ACCENT COLORS-->
+    <Color x:Uid="Color_1" x:Key="HighlightDarkColor">#FF339933</Color>
+    <Color x:Uid="Color_2" x:Key="HighlightLightColor">#FF339933</Color>
+
+    <Color x:Uid="Color_3" x:Key="AccentDarkColor">#FF339933</Color>
+
+    <!--80%-->
+    <Color x:Uid="Color_4" x:Key="AccentColor">#CC339933</Color>
+    <!--60%-->
+    <Color x:Uid="Color_5" x:Key="AccentColor2">#99339933</Color>
+    <!--40%-->
+    <Color x:Uid="Color_6" x:Key="AccentColor3">#66339933</Color>
+    <!--20%-->
+    <Color x:Uid="Color_7" x:Key="AccentColor4">#33339933</Color>
+
+    <LinearGradientBrush x:Uid="LinearGradientBrush_1" x:Key="BrandingBrush"
+                         EndPoint="0.001,0.5"
+                         StartPoint="1.002,0.5">
+        <GradientStop x:Uid="GradientStop_1" Color="{DynamicResource HighlightDarkColor}"
+                      Offset="0" />
+        <GradientStop x:Uid="GradientStop_2" Color="#FF5FC316"
+                      Offset="1" />
+    </LinearGradientBrush>
+
+    <SolidColorBrush x:Uid="SolidColorBrush_1" x:Key="AccentColorBrush"
+                     Color="{DynamicResource AccentColor}" />
+
+
+
+
+</ResourceDictionary>

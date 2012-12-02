@@ -1,0 +1,10 @@
+﻿<UserControl x:Class="MetroWeb.UserControlWebBrowserWindow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:DialogContentControls="clr-namespace:ExtendedWebBrowser2">
+    <Grid>
+        <WindowsFormsHost>
+            <DialogContentControls:ExtendedWebBrowser x:Name="WebBrowser" ScriptErrorsSuppressed="True" StartNewWindow="WebBrowser_StartNewWindow" DownloadComplete="_browser_DownloadComplete" ProgressChanged="WebBrowser_ProgressChanged" CanGoBackChanged="WebBrowser_CanGoBackChanged" CanGoForwardChanged="WebBrowser_CanGoForwardChanged" Downloading="WebBrowser_Downloading" DocumentTitleChanged="WebBrowser_DocumentTitleChanged" Navigated="WebBrowser_Navigated" />
+        </WindowsFormsHost>
+    </Grid>
+</UserControl>

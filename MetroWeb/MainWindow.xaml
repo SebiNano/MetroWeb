@@ -1,0 +1,99 @@
+﻿<Controls:MetroWindow x:Class="MetroWeb.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls" 
+        Title="MetroWeb" Height="600" Width="800" SaveWindowPosition="True" ShowIconOnTitleBar="True" Loaded="MetroWindow_Loaded" ShowTitleBar="True" WindowStartupLocation="CenterScreen" Icon="/MetroWeb;component/Icon Small.png">
+    <Controls:MetroWindow.Resources>
+
+    </Controls:MetroWindow.Resources>
+
+    <Controls:MetroWindow.WindowCommands>
+        <Controls:WindowCommands>
+            <Button Content="Settings" Name="WindowCommandSettings" Click="WindowCommandSettings_Click" />
+        </Controls:WindowCommands>
+    </Controls:MetroWindow.WindowCommands>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid Name="GridMain">
+            <TabControl Name="tabControlMain" PreviewMouseLeftButtonDown="tabControlMain_PreviewMouseLeftButtonDown" SelectionChanged="tabControlMain_SelectionChanged">
+                <TabItem Name="tabItemHome">
+                    <TabItem.Header>
+                        <Controls:AppBarButton 
+                            Foreground="{DynamicResource BlackBrush}" 
+                            Margin="0,6,0,0" 
+                            MetroImageSource="{StaticResource appbar_tiles_nine}" 
+                            Width="28" Height="28" Name="appBarButtonStart" Click="appBarButtonStart_Click" HorizontalAlignment="Left" />
+                    </TabItem.Header>
+
+                    <Grid>
+                        <Grid Margin="120,25,120,0" VerticalAlignment="Top" MaxWidth="600" MinWidth="100">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100*" />
+                            </Grid.ColumnDefinitions>
+                            <TextBox Name="textBoxHomeSearch" VerticalAlignment="Top" Controls:TextboxHelper.ClearTextButton="True" Controls:TextboxHelper.Watermark="Google Search" FontSize="16" Height="30" />
+                        </Grid>
+
+                        <ScrollViewer Margin="0,75,0,0">
+                            <WrapPanel Name="wrapPanelHomeMain">
+                                <Controls:Tile Title="Google" Width="280" Click="Tile_Click">
+                                    <Controls:MetroImage Source="{StaticResource appbar_google}" Width="32" />
+                                </Controls:Tile>
+                            </WrapPanel>
+                        </ScrollViewer>
+                    </Grid>
+                </TabItem>
+
+                <TabItem Name="TabItemRemove">
+                    <TabItem.Header>
+                        <Controls:AppBarButton 
+                            Foreground="{DynamicResource BlackBrush}" 
+                            Margin="0,6,0,0" 
+                            MetroImageSource="{StaticResource appbar_close}" 
+                            Width="28" Height="28" Name="appBarButtonRemove" HorizontalAlignment="Left" Click="appBarButtonRemove_Click" />
+                    </TabItem.Header>
+                </TabItem>
+            </TabControl>
+        </Grid>
+
+        <Grid VerticalAlignment="Bottom" Height="38" Name="GridAppBar" Grid.Row="1">
+            <Grid Margin="108,2,40,6">
+                <ProgressBar VerticalAlignment="Top" Height="4" Name="progressBarLoadProgress" />
+                <TextBox Name="textBoxAddress" Background="LightGray" Foreground="Black" VerticalAlignment="Bottom" KeyDown="textBoxAddress_KeyDown" />
+            </Grid>
+
+            <Controls:AppBarButton 
+                Foreground="{DynamicResource BlackBrush}" 
+                HorizontalAlignment="Left" 
+                MetroImageSource="{StaticResource appbar_arrow_left}" 
+                Width="28" Height="28" Margin="6,0,0,0" Name="appBarButtonBack" IsEnabled="False" Click="appBarButtonBack_Click" />
+            <Controls:AppBarButton 
+                Foreground="{DynamicResource BlackBrush}" 
+                HorizontalAlignment="Left" 
+                MetroImageSource="{StaticResource appbar_arrow_right}" 
+                Width="28" Height="28" Margin="40,0,0,0" Name="appBarButtonForward" IsEnabled="False" Click="appBarButtonForward_Click" />
+            <Controls:AppBarButton 
+                Foreground="{DynamicResource BlackBrush}" 
+                HorizontalAlignment="Left" 
+                MetroImageSource="{StaticResource appbar_refresh}" 
+                Width="28" Height="28" Margin="74,0,0,0" Name="appBarButtonRefresh" Click="appBarButtonRefresh_Click" 
+                Visibility="Hidden" />
+            <Controls:AppBarButton 
+                Foreground="{DynamicResource BlackBrush}" 
+                HorizontalAlignment="Left" 
+                MetroImageSource="{StaticResource appbar_stop}" 
+                Width="28" Height="28" Margin="74,0,0,0" Name="appBarButtonStop" Click="appBarButtonStop_Click" 
+                Visibility="Visible"  />
+            <Controls:AppBarButton
+                MetroImageSource="{StaticResource appbar_star_add}"
+                Foreground="{DynamicResource BlackBrush}"
+                Height="28" 
+                Margin="0,0,6,0" 
+                HorizontalAlignment="Right" 
+                Width="28" Name="appBarButtonStarPage"/>
+        </Grid>
+    </Grid>
+</Controls:MetroWindow>
